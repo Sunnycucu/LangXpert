@@ -5,10 +5,9 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class VocabWord(
-    var id : Int,
     var word: String,
     var definition : String,
-    var exampleSentence : List<String>,
+    var exampleSentence : String,
     var synonym : String,
     var antonym : String
 ): Parcelable

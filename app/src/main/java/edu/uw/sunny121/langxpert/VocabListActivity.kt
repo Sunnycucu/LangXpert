@@ -2,16 +2,13 @@ package edu.uw.sunny121.langxpert
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
-import com.ericchee.songdataprovider.Song
+import edu.uw.sunny121.langxpert.adapter.VocabListAdapter
 import edu.uw.sunny121.langxpert.databinding.ActivityVocabListBinding
 import edu.uw.sunny121.langxpert.model.VocabList
-import kotlin.random.Random
 
 
 fun navigateToVocabListActivity(context: Context) = with(context) {
@@ -34,10 +31,14 @@ class VocabListActivity : AppCompatActivity() {
         binding = ActivityVocabListBinding.inflate(layoutInflater).apply{setContentView(root)}
         with(binding) {
             val adapter = VocabListAdapter(vocabListApp.allVocabLists)
-
             rvVocabLists.adapter = adapter
+            adapter.onVocabListClickListner = {position, vocabList ->
+                navigateToVocabActivity(this@VocabListActivity, position)
+            }
+
+
             etAddName.visibility = View.GONE
-            btnAdd.setOnClickListener{
+            btnAdd.setOnClickListener {
                 if(btnAdd.text.toString() == "add") {
                     etAddName.visibility = View.VISIBLE
                     btnAdd.text="Done"
@@ -46,17 +47,14 @@ class VocabListActivity : AppCompatActivity() {
                     btnAdd.text = "add"
                     addedTitle = etAddName.text.toString()
                     var newVocabList : VocabList = VocabList(
-                        title = addedTitle
-                       // vocabs = null
+                        title = addedTitle,
+                       vocabs = null
                     )
                     vocabListApp.allVocabLists.add(createVocabList(addedTitle))
-                    Log.i("TAG", vocabListApp.allVocabLists.toString())
-                    adapter.updateSong(vocabListApp.allVocabLists)
+                    //Log.i("TAG", vocabListApp.allVocabLists.toString())
+                    adapter.updateVocabList(vocabListApp.allVocabLists)
                     etAddName.text.clear()
                 }
-
-
-
             }
 
 
@@ -73,6 +71,8 @@ class VocabListActivity : AppCompatActivity() {
             })
 
 
+
+
     }
 }
 
@@ -81,6 +81,7 @@ class VocabListActivity : AppCompatActivity() {
         title: String
     ): VocabList {
         return VocabList(
+                 null,
             title
         )
     }

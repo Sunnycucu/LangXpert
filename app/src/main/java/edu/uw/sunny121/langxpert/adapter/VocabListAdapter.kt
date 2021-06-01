@@ -1,4 +1,4 @@
-package edu.uw.sunny121.langxpert
+package edu.uw.sunny121.langxpert.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import edu.uw.sunny121.langxpert.model.VocabList
 class VocabListAdapter(private var listOfVocabLists: List<VocabList>) : RecyclerView.Adapter<VocabListAdapter.VocabListViewHolder>() {
 
 
-//    var onSongClickListner : (position : Int, song : Song) -> Unit = {_, _ ->}
+    var onVocabListClickListner : (position : Int, vocabList : VocabList) -> Unit = {_, _ ->}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VocabListViewHolder {
         val binding = ActivityItemVocabListsBinding.inflate(LayoutInflater.from(parent.context))
@@ -22,17 +22,17 @@ class VocabListAdapter(private var listOfVocabLists: List<VocabList>) : Recycler
 
         with(holder.binding) {
             tvVocabListTitle.text = vocabList.title
-//            itemRoot.setOnClickListener {
-//                onSongClickListner(position, song)
-//            }
+            vocabListRoot.setOnClickListener {
+                onVocabListClickListner(position, vocabList)
+            }
         }
     }
 
 
     override fun getItemCount(): Int = listOfVocabLists.size
 
-    fun updateSong(newListOfSong: List<VocabList>) {
-        this.listOfVocabLists = newListOfSong
+    fun updateVocabList(newListOfVocabList: List<VocabList>) {
+        this.listOfVocabLists = newListOfVocabList
 
         notifyDataSetChanged()
     }

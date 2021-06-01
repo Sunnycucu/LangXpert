@@ -5,6 +5,6 @@ import android.os.Parcelable
 
 @Parcelize
 data class VocabList (
-    //var vocabs : List<VocabWord>?,
+    var vocabs : List<VocabWord>?,
     var title : String
 ) : Parcelable

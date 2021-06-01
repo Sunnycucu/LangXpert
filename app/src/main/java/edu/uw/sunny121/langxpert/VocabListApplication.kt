@@ -11,10 +11,11 @@ class VocabListApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         allVocabLists = mutableListOf<VocabList>()
-        val vl : VocabList = VocabList(
-            title = "vocablist1"
-            //vocabs = listOf<VocabWord>()
-        )
-        allVocabLists.add(vl)
+//        val vl : VocabList = VocabList(
+//                vocabs = null,
+//            title = "vocablist1"
+//            //vocabs = listOf<VocabWord>()
+//        )
+//        allVocabLists.add(vl)
     }
 }
