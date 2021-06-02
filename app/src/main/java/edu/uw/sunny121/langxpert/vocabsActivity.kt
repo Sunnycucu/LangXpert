@@ -38,7 +38,11 @@ class VocabsActivity : AppCompatActivity() {
             val vocabList : VocabList = vocabListApp.allVocabLists[position]
             val adapter = vocabList.vocabs?.let { VocabWordAdapter(it) }
             rvVocabs.adapter = adapter
-            //rvVocabs.addItemDecoration(DividerItemDecoration(this@VocabsActivity, DividerItemDecoration.VERTICAL))
+            if (adapter != null) {
+                adapter.onVocabWordClickListner = {position, vocabList ->
+
+                }
+            }
 
 
 
