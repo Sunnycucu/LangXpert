@@ -11,6 +11,7 @@ class VocabListApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         allVocabLists = mutableListOf<VocabList>()
+
 //        val vl : VocabList = VocabList(
 //                vocabs = null,
 //            title = "vocablist1"

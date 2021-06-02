@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/vocabWordRoot"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:gravity="center"
-    android:layout_marginStart="55dp"
-    android:layout_marginBottom="20dp"
-    android:layout_marginTop="20dp"
-    android:orientation="horizontal"
-    android:background="@color/mainColor"
 
-    >
-
-    <TextView
-        android:id="@+id/tvVocabCardWord"
-        android:layout_width="300dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/vocabWordRoot"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:gravity="center"
-        android:text="Vocab list 1"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="34sp" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
+        card_view:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/mainColor"
+        card_view:cardUseCompatPadding="true">
 
+        <TextView
+            android:id="@+id/tvVocabCardWord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Vocab list 1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
+
 
 
 

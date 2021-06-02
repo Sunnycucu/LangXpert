@@ -33,8 +33,10 @@ class VocabWordAdapter(private var listOfVocabWords: List<VocabWord>) : Recycler
 
     override fun getItemCount(): Int = listOfVocabWords.size
 
-    fun updateVocabWord(newWordsfList: List<VocabWord>) {
-        this.listOfVocabWords = newWordsfList
+    fun updateVocabWord(newWordsfList: List<VocabWord>?) {
+        if (newWordsfList != null) {
+            this.listOfVocabWords = newWordsfList
+        }
 
         notifyDataSetChanged()
     }
