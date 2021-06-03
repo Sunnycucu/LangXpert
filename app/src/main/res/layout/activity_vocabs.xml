@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textSize="30sp"
+            android:textColor="@color/black"
             android:paddingStart="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

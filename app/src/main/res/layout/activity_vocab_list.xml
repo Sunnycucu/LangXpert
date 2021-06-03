@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"
-            android:text="Study mode"
+            android:text="Vocab Lists"
             android:paddingStart="20sp"
             android:textSize="20sp"
             android:textColor="@color/white"

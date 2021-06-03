@@ -3,9 +3,11 @@ package edu.uw.sunny121.langxpert
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import edu.uw.sunny121.langxpert.adapter.VocabWordAdapter
+import edu.uw.sunny121.langxpert.adapter.VocabWordListViewAdapter
 import edu.uw.sunny121.langxpert.databinding.ActivityVocabsBinding
 import edu.uw.sunny121.langxpert.model.VocabList
 
@@ -36,13 +38,47 @@ class VocabsActivity : AppCompatActivity() {
         with(binding) {
             val position: Int = intent.getIntExtra("position", 0)
             val vocabList : VocabList = vocabListApp.allVocabLists[position]
-            val adapter = vocabList.vocabs?.let { VocabWordAdapter(it) }
-            rvVocabs.adapter = adapter
-            if (adapter != null) {
-                adapter.onVocabWordClickListner = {position, vocabList ->
+
+            val adapterCardView = vocabList.vocabs?.let { VocabWordAdapter(it) }
+            val adapterListView = vocabList.vocabs?.let {VocabWordListViewAdapter(it)}
+
+            rvVocabs.addItemDecoration(DividerItemDecoration(this@VocabsActivity,
+                    DividerItemDecoration.VERTICAL))
+
+            rvVocabs.adapter = adapterCardView
+            if (adapterCardView != null) {
+                adapterCardView.onVocabWordClickListner = {position, vocabList ->
 
                 }
             }
+
+
+
+
+            switchVocab.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    // The toggle is enabled
+                    switchVocab.text = "List mode"
+                    rvVocabs.adapter = adapterListView
+                    if (adapterListView != null) {
+                        adapterListView.onVocabWordListViewClickListner = {position, vocabList ->
+
+                        }
+                    }
+
+                } else {
+                    // The toggle is disable
+                    switchVocab.text = "Card mode"
+                    rvVocabs.adapter = adapterCardView
+                    if (adapterCardView != null) {
+                        adapterCardView.onVocabWordClickListner = {position, vocabList ->
+
+                        }
+                    }
+
+                }
+            })
+
 
 
 

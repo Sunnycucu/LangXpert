@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import edu.uw.sunny121.langxpert.databinding.ActivityItemVocabListsBinding
+import edu.uw.sunny121.langxpert.item_vocabLists
 import edu.uw.sunny121.langxpert.model.VocabList
 
 class VocabListAdapter(private var listOfVocabLists: List<VocabList>) : RecyclerView.Adapter<VocabListAdapter.VocabListViewHolder>() {

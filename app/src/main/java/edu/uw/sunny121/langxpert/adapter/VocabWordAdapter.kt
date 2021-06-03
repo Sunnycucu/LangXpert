@@ -2,6 +2,7 @@ package edu.uw.sunny121.langxpert.adapter
 
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -21,7 +22,6 @@ class VocabWordAdapter(private var listOfVocabWords: List<VocabWord>) : Recycler
         return VocabWordViewHolder(binding)
     }
 
-    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: VocabWordViewHolder, position: Int) {
         val vocabWord = listOfVocabWords[position]
         with(holder.binding) {
@@ -30,7 +30,10 @@ class VocabWordAdapter(private var listOfVocabWords: List<VocabWord>) : Recycler
                 onVocabWordClickListner(position, vocabWord)
                 if(tvVocabCardWord.text.toString() == vocabWord.word) {
                     tvVocabCardWord.text = vocabWord.definition
+                    tvVocabCardWord.setTextColor(Color.parseColor("#ffaf7a"));
+
                 } else {
+                    tvVocabCardWord.setTextColor(Color.parseColor("#FFFFFF"));
                     tvVocabCardWord.text = vocabWord.word
 
 

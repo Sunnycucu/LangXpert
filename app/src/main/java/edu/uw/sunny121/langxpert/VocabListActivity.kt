@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import edu.uw.sunny121.langxpert.adapter.VocabListAdapter
 import edu.uw.sunny121.langxpert.databinding.ActivityVocabListBinding
 import edu.uw.sunny121.langxpert.model.VocabList
+import java.security.AccessController.getContext
 
 
 fun navigateToVocabListActivity(context: Context) = with(context) {
@@ -32,9 +34,11 @@ class VocabListActivity : AppCompatActivity() {
         with(binding) {
             val adapter = VocabListAdapter(vocabListApp.allVocabLists)
             rvVocabLists.adapter = adapter
-            adapter.onVocabListClickListner = {position, vocabList ->
+            adapter.onVocabListClickListner = { position, vocabList ->
                 navigateToVocabActivity(this@VocabListActivity, position)
             }
+            rvVocabLists.addItemDecoration(DividerItemDecoration(this@VocabListActivity,
+                    DividerItemDecoration.VERTICAL))
 
 
             etAddName.visibility = View.GONE
@@ -47,8 +51,8 @@ class VocabListActivity : AppCompatActivity() {
                     btnAdd.text = "add"
                     addedTitle = etAddName.text.toString()
                     var newVocabList : VocabList = VocabList(
-                        title = addedTitle,
-                       vocabs = null
+                            title = addedTitle,
+                            vocabs = null
                     )
                     vocabListApp.allVocabLists.add(createVocabList(addedTitle))
                     //Log.i("TAG", vocabListApp.allVocabLists.toString())
@@ -61,11 +65,9 @@ class VocabListActivity : AppCompatActivity() {
             switchMode.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
                     // The toggle is enabled
-                    modeType.text = "Quiz mode"
                     switchMode.text = "Quiz mode"
                 } else {
-                    // The toggle is disabled
-                    modeType.text = "Study mode"
+                    // The toggle is disable
                     switchMode.text = "Study mode"
                 }
             })
@@ -78,11 +80,11 @@ class VocabListActivity : AppCompatActivity() {
 
 
     fun createVocabList(
-        title: String
+            title: String
     ): VocabList {
         return VocabList(
-                 null,
-            title
+                null,
+                title
         )
     }
 }
