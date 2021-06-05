@@ -36,8 +36,8 @@ class VocabsActivity : AppCompatActivity() {
         vocabListApp = this.applicationContext as VocabListApplication
         binding = ActivityVocabsBinding.inflate(layoutInflater).apply{setContentView(root)}
         with(binding) {
-            val position: Int = intent.getIntExtra("position", 0)
-            val vocabList : VocabList = vocabListApp.allVocabLists[position]
+            val positionList: Int = intent.getIntExtra("position", 0)
+            val vocabList : VocabList = vocabListApp.allVocabLists[positionList]
 
             val adapterCardView = vocabList.vocabs?.let { VocabWordAdapter(it) }
             val adapterListView = vocabList.vocabs?.let {VocabWordListViewAdapter(it)}
@@ -62,9 +62,10 @@ class VocabsActivity : AppCompatActivity() {
                     rvVocabs.adapter = adapterListView
                     if (adapterListView != null) {
                         adapterListView.onVocabWordListViewClickListner = {position, vocabList ->
-
+                            navigateToVocabDetailViewActivity(this@VocabsActivity, positionList, position)
                         }
                     }
+
 
                 } else {
                     // The toggle is disable
@@ -90,7 +91,7 @@ class VocabsActivity : AppCompatActivity() {
                 tvVocabListTitle.text = vocabList.title
             }
             btnAddNewWord.setOnClickListener {
-                navigateToAddVocabActivity(this@VocabsActivity, position)
+                navigateToAddVocabActivity(this@VocabsActivity, positionList)
             }
 
 

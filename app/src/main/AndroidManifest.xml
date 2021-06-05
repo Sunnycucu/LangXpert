@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LangXpert">
-        <activity android:name=".AddVocabActivity"></activity>
+        <activity android:name=".VocabDetailViewActivity"></activity>
+        <activity android:name=".AddVocabActivity" />
         <activity android:name=".VoacbCards" />
         <activity android:name=".VocabsActivity" />
         <activity android:name=".item_vocabLists" />
