@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">LangXpert</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+    <string name="results">Results</string>
+    <string name="correct">CORRECT</string>
+    <string name="incorrect">INCORRECT</string>
+    <string name="quiz_on">Quiz On These Terms</string>
+    <string name="back_desc">Back Arrow</string>
+    <string name="retake">Retake Quiz</string>
+    <string name="term">Term</string>
+    <string name="enter">Enter Answer Here</string>
+    <string name="next">Next</string>
+
+    <!--    The following 3 require values from vocab kotlin file-->
+    <string name="question_number_tracker">1/[# of terms]\nQuestions</string>
+    <string name="correct_score">Correct ([# Correct] / [# Total])</string>
+    <string name="incorrect_score">Incorrect ([# Incorrect] / [# Total]</string>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

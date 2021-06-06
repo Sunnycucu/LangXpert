@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LangXpert">
+        <activity android:name=".QuizActivity"></activity>
         <activity android:name=".startingScreenActivity"></activity>
-        <activity android:name=".VocabDetailViewActivity" />
+        <activity android:name=".VocabDetailViewActivity"></activity>
         <activity android:name=".AddVocabActivity" />
         <activity android:name=".VoacbCards" />
         <activity android:name=".VocabsActivity" />
