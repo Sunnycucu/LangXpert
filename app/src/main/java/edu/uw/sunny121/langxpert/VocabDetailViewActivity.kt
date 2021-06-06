@@ -46,6 +46,7 @@ class VocabDetailViewActivity : AppCompatActivity() {
             val positionWord: Int = intent.getIntExtra("positionWord", 0)
             val vocabList : VocabList = vocabListApp.allVocabLists[positionList]
             val vocabWord : VocabWord? = vocabList.vocabs?.get(positionWord)
+
             etDetailDef.setText(vocabWord?.definition)
             etDetailES.setText(vocabWord?.exampleSentence)
             etDetailSY.setText(vocabWord?.synonym)

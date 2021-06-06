@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uw.sunny121.langxpert">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".VocabListApplication"
         android:allowBackup="true"
@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LangXpert">
-        <activity android:name=".VocabDetailViewActivity"></activity>
+        <activity android:name=".startingScreenActivity"></activity>
+        <activity android:name=".VocabDetailViewActivity" />
         <activity android:name=".AddVocabActivity" />
         <activity android:name=".VoacbCards" />
         <activity android:name=".VocabsActivity" />

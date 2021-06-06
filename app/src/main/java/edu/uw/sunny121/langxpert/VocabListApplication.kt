@@ -3,20 +3,17 @@ package edu.uw.sunny121.langxpert
 import android.app.Application
 import edu.uw.sunny121.langxpert.model.VocabList
 import edu.uw.sunny121.langxpert.model.VocabWord
+import edu.uw.sunny121.langxpert.repository.DataRepository
 
 class VocabListApplication : Application() {
 
     lateinit var allVocabLists : MutableList<VocabList>
+    var initiated : Boolean = false
+    lateinit var dataRepository : DataRepository
 
     override fun onCreate() {
         super.onCreate()
         allVocabLists = mutableListOf<VocabList>()
-
-//        val vl : VocabList = VocabList(
-//                vocabs = null,
-//            title = "vocablist1"
-//            //vocabs = listOf<VocabWord>()
-//        )
-//        allVocabLists.add(vl)
+        dataRepository = DataRepository()
     }
 }
