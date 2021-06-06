@@ -66,6 +66,7 @@ class VocabListActivity : AppCompatActivity() {
                 if (isChecked) {
                     // The toggle is enabled
                     switchMode.text = "Quiz mode"
+                    navigateToQuizActivity(this@VocabListActivity)
                 } else {
                     // The toggle is disable
                     switchMode.text = "Study mode"
