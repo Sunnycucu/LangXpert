@@ -11,8 +11,8 @@
 			"word": "사과",
 			"definition": "apple",
 			"exampleSentence": "사과는 빨간 과일이다",
-			"synonym": " ",
-			"antonym": " "
+			"synonym": "풋사과",
+			"antonym": "사과가아님"
 		},
 		{
 			"word": "슬픈",
@@ -25,8 +25,8 @@
 			"word": "고구마",
 			"definition": "Sweet potato",
 			"exampleSentence": "우리 강아지는 고구마를 좋아해",
-			"synonym": " ",
-			"antonym": " "
+			"synonym": "감자",
+			"antonym": "고구마아님"
 		}
 	],
 
