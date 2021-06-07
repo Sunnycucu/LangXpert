@@ -68,7 +68,9 @@ class VocabListActivity : AppCompatActivity() {
                     etAddName.text.clear()
                 }
             }
-
+            etAddName.setOnClickListener {
+                etAddName.setText("")
+            }
 
             switchMode.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
