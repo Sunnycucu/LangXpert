@@ -5,12 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.CompoundButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import edu.uw.sunny121.langxpert.adapter.VocabListAdapter
+import edu.uw.sunny121.langxpert.application.VocabListApplication
 import edu.uw.sunny121.langxpert.databinding.ActivityVocabListBinding
 import edu.uw.sunny121.langxpert.model.VocabList
-import java.security.AccessController.getContext
+import edu.uw.sunny121.langxpert.quiz.navigateToQuizActivity
 
 
 fun navigateToVocabListActivity(context: Context) = with(context) {
@@ -37,6 +39,12 @@ class VocabListActivity : AppCompatActivity() {
             adapter.onVocabListClickListner = { position, vocabList ->
                 navigateToVocabActivity(this@VocabListActivity, position)
             }
+
+
+
+
+
+
             rvVocabLists.addItemDecoration(DividerItemDecoration(this@VocabListActivity,
                     DividerItemDecoration.VERTICAL))
 
@@ -66,10 +74,20 @@ class VocabListActivity : AppCompatActivity() {
                 if (isChecked) {
                     // The toggle is enabled
                     switchMode.text = "Quiz mode"
-                    navigateToQuizActivity(this@VocabListActivity)
+                    adapter.onVocabListClickListner = { position, vocabList ->
+                        if(vocabList.vocabs?.isEmpty() == true) {
+                            Toast.makeText(this@VocabListActivity,"this vocab list is empty", Toast.LENGTH_SHORT).show()
+                        } else {
+                            navigateToQuizActivity(this@VocabListActivity, position)
+                        }
+                    }
                 } else {
                     // The toggle is disable
                     switchMode.text = "Study mode"
+                    adapter.onVocabListClickListner = { position, vocabList ->
+                        navigateToVocabActivity(this@VocabListActivity, position)
+                    }
+
                 }
             })
 

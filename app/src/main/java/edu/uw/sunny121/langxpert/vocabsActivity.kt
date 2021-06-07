@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import edu.uw.sunny121.langxpert.adapter.VocabWordAdapter
 import edu.uw.sunny121.langxpert.adapter.VocabWordListViewAdapter
+import edu.uw.sunny121.langxpert.application.VocabListApplication
 import edu.uw.sunny121.langxpert.databinding.ActivityVocabsBinding
 import edu.uw.sunny121.langxpert.model.VocabList
 

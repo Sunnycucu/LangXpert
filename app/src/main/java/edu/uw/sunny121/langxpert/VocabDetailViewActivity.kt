@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import edu.uw.sunny121.langxpert.application.VocabListApplication
 import edu.uw.sunny121.langxpert.databinding.ActivityVocabDetailViewBinding
-import edu.uw.sunny121.langxpert.databinding.ActivityVocabListBinding
 import edu.uw.sunny121.langxpert.model.VocabList
 import edu.uw.sunny121.langxpert.model.VocabWord
 

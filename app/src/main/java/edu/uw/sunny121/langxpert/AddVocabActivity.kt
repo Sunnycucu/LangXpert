@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
-import edu.uw.sunny121.langxpert.adapter.VocabWordAdapter
+import edu.uw.sunny121.langxpert.application.VocabListApplication
 import edu.uw.sunny121.langxpert.databinding.ActivityAddVocabBinding
-import edu.uw.sunny121.langxpert.databinding.ActivityVocabListBinding
-import edu.uw.sunny121.langxpert.model.VocabList
 import edu.uw.sunny121.langxpert.model.VocabWord
 
 

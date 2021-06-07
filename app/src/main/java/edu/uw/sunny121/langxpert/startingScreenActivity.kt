@@ -6,8 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import edu.uw.sunny121.langxpert.databinding.ActivityAddVocabBinding
-import edu.uw.sunny121.langxpert.databinding.ActivityMainBinding
+import edu.uw.sunny121.langxpert.application.VocabListApplication
 import edu.uw.sunny121.langxpert.databinding.ActivityStartingScreenBinding
 import edu.uw.sunny121.langxpert.model.VocabList
 import kotlinx.coroutines.launch

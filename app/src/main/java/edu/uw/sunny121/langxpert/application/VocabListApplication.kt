@@ -1,4 +1,4 @@
-package edu.uw.sunny121.langxpert
+package edu.uw.sunny121.langxpert.application
 
 import android.app.Application
 import edu.uw.sunny121.langxpert.model.VocabList

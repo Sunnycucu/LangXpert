@@ -2,6 +2,7 @@ package edu.uw.sunny121.langxpert
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import edu.uw.sunny121.langxpert.application.VocabListApplication
 import edu.uw.sunny121.langxpert.databinding.ActivityMainBinding
 
 
